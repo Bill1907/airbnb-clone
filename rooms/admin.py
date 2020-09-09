@@ -82,7 +82,7 @@ class RoomAdmin(admin.ModelAdmin):
     list_filter = (
         "instant_book",
         "host__superhost",
-        "roomtype",
+        "room_type",
         "amenities",
         "facilities",
         "house_rules",
@@ -105,6 +105,8 @@ class RoomAdmin(admin.ModelAdmin):
 
     def count_photos(self, obj):
         return obj.photos.count()
+
+    count_photos.short_description = "Photo Count"
 
 
 @admin.register(models.Photo)
